@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:stopwatch/widgets/AnimatedStopwatch.dart';
+import 'package:stopwatch/widgets/animated_stopwatch.dart';
 
 class AboutView extends StatelessWidget {
   const AboutView({super.key});
@@ -30,7 +30,7 @@ class AboutView extends StatelessWidget {
               ),
               const SizedBox(height: 8),
               Text(
-                'v 2.0',
+                'v 2.1',
                 style: theme.textTheme.bodyLarge?.copyWith(
                   color: theme.colorScheme.primary,
                 ),
@@ -39,7 +39,7 @@ class AboutView extends StatelessWidget {
               Text(
                 'Developed by',
                 style: theme.textTheme.bodyMedium?.copyWith(
-                  color: theme.colorScheme.onSurface.withOpacity(0.6),
+                  color: theme.colorScheme.onSurface.withValues(alpha: 0.6),
                 ),
               ),
               const SizedBox(height: 4),
@@ -56,6 +56,8 @@ class AboutView extends StatelessWidget {
                   _VersionChip(label: 'v1', date: '07/2023', theme: theme),
                   const SizedBox(width: 12),
                   _VersionChip(label: 'v2', date: '02/2025', theme: theme),
+                  const SizedBox(width: 12),
+                  _VersionChip(label: 'v2.1', date: '03/2026', theme: theme)
                 ],
               ),
             ],
@@ -82,7 +84,7 @@ class _VersionChip extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       decoration: BoxDecoration(
-        color: theme.colorScheme.surfaceVariant,
+        color: theme.colorScheme.surfaceContainerHighest,
         borderRadius: BorderRadius.circular(20),
       ),
       child: Text(

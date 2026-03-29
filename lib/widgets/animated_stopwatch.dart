@@ -46,13 +46,13 @@ class StopwatchPainter extends CustomPainter {
     final radius = size.width / 2 - 8;
 
     final ringPaint = Paint()
-      ..color = outlineColor.withOpacity(0.15)
+      ..color = outlineColor.withValues(alpha: 0.15)
       ..style = PaintingStyle.stroke
       ..strokeWidth = 3;
     canvas.drawCircle(center, radius, ringPaint);
 
     final fillPaint = Paint()
-      ..color = outlineColor.withOpacity(0.03)
+      ..color = outlineColor.withValues(alpha: 0.03)
       ..style = PaintingStyle.fill;
     canvas.drawCircle(center, radius, fillPaint);
 
@@ -73,8 +73,8 @@ class StopwatchPainter extends CustomPainter {
 
       final tickPaint = Paint()
         ..color = isMajor
-            ? onSurfaceColor.withOpacity(0.5)
-            : outlineColor.withOpacity(0.25)
+            ? onSurfaceColor.withValues(alpha: 0.5)
+            : outlineColor.withValues(alpha: 0.25)
         ..strokeWidth = isMajor ? 2.0 : 1.0
         ..strokeCap = StrokeCap.round;
 
@@ -87,9 +87,9 @@ class StopwatchPainter extends CustomPainter {
     final hourAngle = (totalMs % 43200000) / 43200000.0 * 2 * pi - pi / 2;
 
     _drawHand(canvas, center, hourAngle, radius * 0.45, 4.0,
-        onSurfaceColor.withOpacity(0.35));
+        onSurfaceColor.withValues(alpha: 0.35));
     _drawHand(canvas, center, minuteAngle, radius * 0.65, 3.0,
-        onSurfaceColor.withOpacity(0.6));
+        onSurfaceColor.withValues(alpha: 0.6));
     _drawHand(canvas, center, secondAngle, radius * 0.85, 1.5, primaryColor);
 
     final dotPaint = Paint()

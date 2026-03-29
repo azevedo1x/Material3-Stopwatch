@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../data/stopwatch_provider.dart';
 import 'about_view.dart';
-import '../../widgets/AnimatedStopwatch.dart';
+import '../../widgets/animated_stopwatch.dart';
 
 class HomeView extends ConsumerWidget {
   const HomeView({super.key});
@@ -80,7 +80,8 @@ class TimerDisplay extends StatelessWidget {
     final hours = elapsed.inHours.toString().padLeft(2, '0');
     final minutes = (elapsed.inMinutes % 60).toString().padLeft(2, '0');
     final seconds = (elapsed.inSeconds % 60).toString().padLeft(2, '0');
-    final millis = (elapsed.inMilliseconds % 1000 ~/ 10).toString().padLeft(2, '0');
+    final millis =
+        (elapsed.inMilliseconds % 1000 ~/ 10).toString().padLeft(2, '0');
 
     final theme = Theme.of(context);
 
@@ -160,9 +161,8 @@ class ButtonRow extends StatelessWidget {
               style: FilledButton.styleFrom(
                 shape: const CircleBorder(),
                 padding: EdgeInsets.zero,
-                backgroundColor: isOn
-                    ? theme.colorScheme.error
-                    : theme.colorScheme.primary,
+                backgroundColor:
+                    isOn ? theme.colorScheme.error : theme.colorScheme.primary,
               ),
               child: Icon(
                 isOn ? Icons.pause_rounded : Icons.play_arrow_rounded,
