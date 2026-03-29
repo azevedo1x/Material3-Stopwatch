@@ -11,10 +11,6 @@ A modern Flutter stopwatch application featuring a custom-painted analog clock w
 - **Riverpod state management** — `StopwatchService` lives as a provider with proper timer lifecycle (no leaks)
 - **About page** — Version history shown as styled chips
 
-## Screenshots
-
-<!-- Add screenshots here -->
-
 ## Getting Started
 
 ```sh
