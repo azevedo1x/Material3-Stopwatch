@@ -4,12 +4,12 @@ A modern Flutter stopwatch application featuring a custom-painted analog clock w
 
 ## Features
 
-- **Analog clock face** — Custom `CustomPaint` dial with 60 tick marks, smooth second/minute/hour hands driven by millisecond-precision elapsed time
-- **Zero-padded digital display** — `HH:MM:SS.cs` format with accent-colored centiseconds
-- **Start / Pause / Reset** — Circular action buttons; reset fades in only when there's elapsed time
-- **Material 3 dark theme** — Purple accent (`#6C63FF`), supports system light/dark mode
-- **Riverpod state management** — `StopwatchService` lives as a provider with proper timer lifecycle (no leaks)
-- **About page** — Version history shown as styled chips
+- **Analog clock face** - Custom `CustomPaint` dial with 60 tick marks, smooth second/minute/hour hands driven by millisecond-precision elapsed time
+- **Zero-padded digital display** - `HH:MM:SS.cs` format with accent-colored centiseconds
+- **Start / Pause / Reset** - Circular action buttons; reset fades in only when there's elapsed time
+- **Material 3 dark theme** - Purple accent (`#6C63FF`), supports system light/dark mode
+- **Riverpod state management** - `StopwatchService` lives as a provider with proper timer lifecycle (no leaks)
+- **About page** - Version history shown as styled chips
 
 ## Getting Started
 
@@ -46,7 +46,7 @@ The app follows a layered structure:
 
 | Layer | Responsibility |
 |---|---|
-| **`data/`** | Riverpod providers and `StopwatchService` — owns the `Stopwatch` instance, a `Timer.periodic` at ~60fps, and all state mutations |
+| **`data/`** | Riverpod providers and `StopwatchService` - owns the `Stopwatch` instance, a `Timer.periodic` at ~60fps, and all state mutations |
 | **`presentation/`** | UI screens that `watch` providers and call service methods. No business logic in widgets |
 | **`widgets/`** | Reusable visual components. `AnimatedStopwatch` uses an `AnimationController` to repaint a `StopwatchPainter` that draws the clock face, tick marks, and hands |
 
